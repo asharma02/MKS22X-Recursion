@@ -36,14 +36,20 @@ public class recursive {
       return fibhelper(n-1, k, k + h); //params = counter, the first sum, then the second sum added
     }
 
-    public static ArrayList<Integer> makeAllSums(){
+    public static ArrayList<Integer> makeAllSums(int n){
       ArrayList<Integer> sum = new ArrayList<Integer>();
-
+      makesumshelper(n, 0, sum);
+      return sum;
    }
 
-   private static void makesumshelper(int n, int sum, ArrayList<Integer> sums) {
-
-     
+   private static void makesumshelper(int n, int sumcurrent, ArrayList<Integer> sums) {
+     if (n == 0) {
+       sum.add(sumcurrent);
+     }
+     else {
+       makesumshelper(n - 1, sumcurrent, sum);
+       makesumshelper(n - 1, sumcurrent + n, sum);
+     }
    }
 
 
