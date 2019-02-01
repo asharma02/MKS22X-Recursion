@@ -5,7 +5,7 @@ public class recursive {
     return newtonshelper(n, 1);
   }
 
-  public static double newtonshelper(double n, double guess) {
+  private static double newtonshelper(double n, double guess) {
     if (n == 0) {
       return 0;
     }
@@ -23,7 +23,17 @@ public class recursive {
      *precondition: n is non-negative
      */
     public static int fib(int n){
+      return fibhelper(n, 0, 1);
+    }
 
+    private static int fibhelper(int n, int h, int k){
+      if (n == 0) {
+        return 1;
+      }
+      if (n == 1) {
+        return k;
+      }
+      return fibhelper(n-1, k, k + h); //params = counter, the first sum, then the second sum added
     }
 
 
@@ -41,6 +51,11 @@ public class recursive {
   public static void main(String[] args) {
     System.out.println(sqrt(100));
     System.out.println(sqrt(2));
+
+    System.out.println(fib(0));
+    System.out.println(fib(1));
+    System.out.println(fib(5));
+    System.out.println(fib(7))
   }
 
 
