@@ -55,7 +55,7 @@ public class recursive {
     System.out.println(fib(0));
     System.out.println(fib(1));
     System.out.println(fib(5));
-    System.out.println(fib(7))
+    System.out.println(fib(7));
   }
 
 
